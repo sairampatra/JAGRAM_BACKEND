@@ -18,6 +18,7 @@ app.set("trust proxy", 1);
 const corsOptions = {
   origin: CORS_ORIGIN,
   credentials: true,
+  
 };
 app.use(cors(corsOptions))
 
@@ -29,10 +30,13 @@ app.get('/',(req,res)=>{
     })
     
 })
+app.get('/health', (req, res) => {
+  return res.json({ ok: true });
+});
 
 app.use('/api',apiRouter)   // setting up router
 
 const port = PORT; 
-app.listen(port, () => {
+app.listen(port,"0.0.0.0", () => {
   console.log(`soroboro started at port ${port}`); // setting up port
 });

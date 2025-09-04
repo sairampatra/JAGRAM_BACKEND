@@ -64,6 +64,11 @@ export const login = async (req, res) => {
         secure: true,             // true = HTTPS only
         sameSite: "None",         // Required for cross-origin
         maxAge: 1 * 24 * 60 * 60 * 1000, // 1 days
+
+  //        httpOnly: true,
+  // secure: false,         // <-- Allow HTTP for local dev
+  // sameSite: "Lax",       // Lax works fine on same origin or minimal cross-origin
+  // maxAge: 1 * 24 * 60 * 60 * 1000,
       })
       .json({
         success: true,

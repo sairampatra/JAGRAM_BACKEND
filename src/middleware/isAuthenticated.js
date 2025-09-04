@@ -3,7 +3,7 @@ import { verifyToken } from "../utils/jwt.js"
 export const isAuthenticated = async (req,res,next)=>{
     
     const token = req.cookies.token
-    console.log(token)
+    // console.log(token)
     if (!token) {
 
         return res.status(400).json({
