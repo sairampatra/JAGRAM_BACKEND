@@ -54,8 +54,7 @@ export const login = async (req, res) => {
     const { userData, token } = await signinService({ email, password });
               console.log(userData)
 
-    return res
-      .cookie("token", token, {
+    return res.cookie("token", token, {
         // httpOnly: true,
         // sameSite: "strict",
         // maxAge: 1 * 24 * 60 * 60 * 1000,
